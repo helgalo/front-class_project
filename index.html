@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Front Class</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <h1>Quem sou eu?</h1>
+    <p>Me chamo Helder Farias, tenho <span id="idade"></span> anos.</p>
+    <p>Possuo formação em Programação de Jogos Digitais pelo <a
+            href="https://portal.ifrn.edu.br/campus/ceara-mirim/">IFRN</a> campus Ceará-Mirim e atualmente estou
+        cursando Análoise e Desenvolvimento de Sistemas pela <a href="https://www.uninassau.edu.br/">UNINASSAU</a> </p>
+</body>
+
+<script>
+    // Defina a data de nascimento (Ano, Mês [0-11], Dia)
+    const dataNascimento = new Date(2002, 0, 13); // Exemplo: 15 de Janeiro de 2000
+    const hoje = new Date();
+
+    let idade = hoje.getFullYear() - dataNascimento.getFullYear();
+    const mes = hoje.getMonth() - dataNascimento.getMonth();
+
+    // Ajusta se ainda não fez aniversário no ano corrente
+    if (mes < 0 || (mes === 0 && hoje.getDate() < dataNascimento.getDate())) {
+        idade--;
+    }
+
+    // Insere o valor no elemento HTML
+    document.getElementById("idade").textContent = idade;
+</script>
+
+
+</html>
