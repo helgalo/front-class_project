@@ -11,11 +11,231 @@
 </head>
 
 <body>
-    <h1>Quem sou eu?</h1>
-    <p>Me chamo Helder Farias, tenho <span id="idade"></span> anos.</p>
-    <p>Possuo formação em Programação de Jogos Digitais pelo <a
-            href="https://portal.ifrn.edu.br/campus/ceara-mirim/">IFRN</a> campus Ceará-Mirim e atualmente estou
-        cursando Análoise e Desenvolvimento de Sistemas pela <a href="https://www.uninassau.edu.br/">UNINASSAU</a> </p>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#carreira">Carreira</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção de sobre -->
+
+        <section id="sobre">
+            <h1>Quem sou eu?</h1>
+
+            <h2>Foto de Perfil</h2>
+            <!-- Imagem com alt contextual e descritivo -->
+            <img src="img/perfil.jpg"
+                alt="Foto de perfil profissional exibindo o rosto em primeiro plano de Helder Farias." width="200">
+            <p>Me chamo Helder Farias, tenho <span id="idade"></span> anos.</p>
+            <p>Possuo formação em Programação de Jogos Digitais pelo <a
+                    href="https://portal.ifrn.edu.br/campus/ceara-mirim/">IFRN</a> campus Ceará-Mirim e atualmente estou
+                cursando Análoise e Desenvolvimento de Sistemas pela <a
+                    href="https://www.uninassau.edu.br/">UNINASSAU</a>
+                3/5
+            </p>
+        </section>
+
+        <!-- Seção de Habilidades (Skills) -->
+        <section id="skills">
+            <h2>Minhas Habilidades</h2>
+            <ul class="skills-list">
+                <li>Flutter</li>
+                <li>Dart</li>
+                <li>TypeScript</li>
+                <li>State Management (MobX / Bloc)</li>
+                <li>CI/CD & DevOps Mobile</li>
+                <li>REST APIs & Dio</li>
+                <li>Offline Cache (Hive / SQLite)</li>
+                <li>Google Maps SDK</li>
+                <li>Git & Code Review</li>
+                <li>Arquitetura Limpa (Clean Arch / Modular)</li>
+                <li>Testes de Integração & Unitários</li>
+            </ul>
+        </section>
+
+        <!-- Seção Carreira (Linha do Tempo Horizontal) -->
+        <section id="carreira">
+            <h2>Linha do Tempo Profissional</h2>
+            <div class="timeline-container">
+                <ol class="timeline-horizontal">
+
+                    <!-- Evento 1 -->
+                    <li class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Nov/2021 – Fev/2024</span>
+                            <h3>Puzzl Software House</h3>
+                            <h4>Desenvolvedor Mobile Júnior</h4>
+                            <p>Desenvolvi +10 aplicações Flutter com atuação em code review, mentoria, CI/CD e testes.
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- Evento 2 -->
+                    <li class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Mar/2024 – Ago/2024</span>
+                            <h3><a href="https://www.linkedin.com/company/singolarlab/" target="_blank"
+                                    rel="noopener">Singolar</a></h3>
+                            <h4>Desenvolvedor Mobile Pleno</h4>
+                            <p>Liderei o desenvolvimento Flutter do app GreenGo Capital para App Store e Google Play.
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- Evento 3 -->
+                    <li class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Ago/2024 – Nov/2024</span>
+                            <h3>GreenGo Capital</h3>
+                            <h4>Mobile Pleno & Tech Lead</h4>
+                            <p>Assumi a liderança técnica completa do aplicativo até a pausa estratégica do negócio.</p>
+                        </div>
+                    </li>
+
+                    <!-- Evento 4 -->
+                    <li class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Nov/2024 – Abr/2025</span>
+                            <h3><a href="https://www.keener.io/" target="_blank" rel="noopener">Keener.io</a></h3>
+                            <h4>Desenvolvedor Mobile Pleno</h4>
+                            <p>Integrações de Maps, cache offline com Hive/Dio e mentoria de desenvolvedores.</p>
+                        </div>
+                    </li>
+
+                    <!-- Evento 5 -->
+                    <li class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Jun/2025 – Jun/2026</span>
+                            <h3><a href="https://hoobox.one/" target="_blank" rel="noopener">Hoobox Robotics</a></h3>
+                            <h4>Desenvolvedor Mobile Pleno</h4>
+                            <p>Projetos de gestão hospitalar integrados ao Tasy para hospitais Einstein, BP e
+                                Sírio-Libanês.</p>
+                        </div>
+                    </li>
+
+                </ol>
+            </div>
+        </section>
+
+        <!-- Seção eventos -->
+        <section id="eventos">
+            <h2>Eventos que participo</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Evento</th>
+                        <th>Ano</th>
+                        <th>Foto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Google I/O Extended</td>
+                        <td>2025</td>
+                        <td> <img src="img/io_2025.jpg"
+                                alt="Foto de grupo de densenvolvedores no evento do Google IO Extended 2025"
+                                width="200">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>GO RN</td>
+                        <td>2025</td>
+                        <td> <img src="img/gorn.jpg"
+                                alt="Foto de grupo de densenvolvedores no evento do Google IO Extended 2025"
+                                width="200">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Google I/O Extended</td>
+                        <td>2026</td>
+                        <td> <img src="img/io_2026.jpg"
+                                alt="Foto de grupo de densenvolvedores no evento do Google IO Extended 2025"
+                                width="200">
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- Seção de Contato (Formulário) -->
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <form action="#" method="POST">
+
+                <!-- Campo Nome -->
+                <div>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <!-- Campo E-mail -->
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Seleção de Curso -->
+                <div>
+                    <label for="curso">Curso:</label>
+                    <select id="curso" name="curso" required>
+                        <option value="">Selecione uma opção...</option>
+                        <option value="ads">Análise e Desenv. de Sistemas</option>
+                        <option value="si">Sistemas de Informação</option>
+                        <option value="cc">Ciência da Computação</option>
+                    </select>
+                </div>
+
+                <!-- Opções de Turno (Radio) -->
+                <fieldset>
+                    <legend>Turno:</legend>
+
+                    <input type="radio" id="turno-matutino" name="turno" value="matutino" required>
+                    <label for="turno-matutino">Matutino</label>
+
+                    <input type="radio" id="turno-vespertino" name="turno" value="vespertino">
+                    <label for="turno-vespertino">Vespertino</label>
+
+                    <input type="radio" id="turno-noturno" name="turno" value="noturno">
+                    <label for="turno-noturno">Noturno</label>
+                </fieldset>
+
+                <!-- Mensagem -->
+                <div>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                </div>
+
+                <!-- Botão de Envio -->
+                <div>
+                    <button type="submit">Enviar Formulário</button>
+                </div>
+
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Helder Farias.</p>
+        </footer>
+
+    </main>
 </body>
 
 <script>

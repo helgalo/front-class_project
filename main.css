@@ -1,0 +1,414 @@
+/* ==========================================================================
+   1. Reset & Variáveis Globais
+   ========================================================================== */
+:root {
+    --bg-primary: #0f172a;
+    --bg-surface: #1e293b;
+    --bg-surface-hover: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --border: #334155;
+    --radius: 12px;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   2. Cabeçalho & Navegação Fixa
+   ========================================================================== */
+header {
+    position: sticky;
+    top: 1rem;
+    z-index: 100;
+    margin-bottom: 3rem;
+}
+
+nav {
+    background-color: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 9999px;
+    padding: 0.75rem 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   3. Seções 
+   ========================================================================== */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+section {
+    scroll-margin-top: 6rem;
+}
+
+h1 {
+    font-size: 2.25rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   4. Seção Sobre (Perfil)
+   ========================================================================== */
+#sobre img {
+    display: block;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    margin: 1.5rem 0;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+main>p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+#idade {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Seção de Skill
+   ========================================================================== */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skills-list li {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    padding: 0.45rem 0.95rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.skills-list li:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Seção Carreira
+   ========================================================================== */
+.timeline-container {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.timeline-horizontal {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Linha horizontal no topo de cada item */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--border);
+    z-index: 1;
+}
+
+/* Marcador circular sobreposto à linha */
+.timeline-marker {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    border: 3px solid var(--accent);
+    z-index: 2;
+    margin-bottom: 1.25rem;
+    margin-left: 1rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: scale(1.3);
+    background-color: var(--accent);
+}
+
+/* Card com o conteúdo da experiência */
+.timeline-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: var(--shadow);
+    height: 100%;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.timeline-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.timeline-card h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.timeline-card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.timeline-card h3 a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.timeline-card h4 {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.timeline-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    margin-top: 0.25rem;
+}
+
+/* ==========================================================================
+   6. Seção Eventos (Tabela Customizada)
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #0b1120;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td img {
+    border-radius: 8px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+}
+
+/* ==========================================================================
+   7. Seção Formulário de Contato
+   ========================================================================== */
+#contato {
+    background-color: var(--bg-surface);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    margin-top: 4rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label,
+legend {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    background-color: #0f172a;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--accent);
+}
+
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+fieldset legend {
+    padding: 0 0.5rem;
+}
+
+fieldset label {
+    cursor: pointer;
+    margin-left: -0.25rem;
+}
+
+button[type="submit"] {
+    background-color: var(--accent);
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.85rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--accent-hover);
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   8. Rodapé
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
